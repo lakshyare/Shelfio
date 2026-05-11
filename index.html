@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shelfio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- AMBIENT (dust only, no rain) -->
+  <div id="ambient-layer">
+    <canvas id="dust-canvas"></canvas>
+  </div>
+
+  <!-- BACKGROUND -->
+  <div id="room-bg"></div>
+  <div id="vignette"></div>
+
+  <!-- LOGO -->
+  <div id="logo-wrap">
+    <div id="logo">
+      <svg id="logo-icon" viewBox="0 0 36 36" fill="none">
+        <rect x="4"  y="6"  width="6"  height="22" rx="1.5" fill="#c8860a"/>
+        <rect x="12" y="4"  width="5"  height="24" rx="1.5" fill="#8a5a28"/>
+        <rect x="19" y="7"  width="4"  height="21" rx="1.5" fill="#c8860a" opacity="0.75"/>
+        <rect x="25" y="5"  width="6"  height="23" rx="1.5" fill="#6b4318"/>
+        <rect x="3"  y="28" width="30" height="4"  rx="1.5" fill="#4a2e10"/>
+        <rect x="3"  y="26" width="30" height="2"  rx="1"   fill="#7a5030" opacity="0.6"/>
+      </svg>
+      <span id="logo-text">Shelfio</span>
+    </div>
+  </div>
+
+  <!-- SETTINGS BUTTON (top right) -->
+  <button id="settings-btn" title="Settings">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="3"/>
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+    </svg>
+  </button>
+
+  <!-- SEARCH (hidden, appears on mouse near top) -->
+  <div id="search-wrap">
+    <div id="search-inner">
+      <svg id="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input type="text" id="search-bar" placeholder="Search your library..." autocomplete="off"/>
+      <button id="search-close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- SETTINGS PANEL -->
+  <div id="settings-panel">
+    <div id="settings-header">
+      <h3>Settings</h3>
+      <button id="settings-close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="setting-group">
+      <p class="setting-label">Background</p>
+      <div id="bg-grid">
+        <button class="bg-btn active" data-bg="assets/bg.jpg">Default</button>
+        <button class="bg-btn" data-bg="assets/bg1.jpg">1</button>
+        <button class="bg-btn" data-bg="assets/bg2.jpg">2</button>
+        <button class="bg-btn" data-bg="assets/bg3.jpg">3</button>
+        <button class="bg-btn" data-bg="assets/bg4.jpg">4</button>
+        <button class="bg-btn" data-bg="assets/bg5.jpg">5</button>
+        <button class="bg-btn" data-bg="assets/bg6.jpg">6</button>
+        <button class="bg-btn" data-bg="assets/bg7.jpg">7</button>
+        <button class="bg-btn" data-bg="assets/bg8.jpg">8</button>
+        <button class="bg-btn" data-bg="assets/bg9.jpg">9</button>
+      </div>
+    </div>
+
+    <div class="setting-group">
+      <p class="setting-label">Danger Zone</p>
+      <button id="reset-btn">Reset All Progress</button>
+      <p class="setting-hint">Clears all shelves, favourites and reading history.</p>
+    </div>
+  </div>
+
+  <!-- MAIN LIBRARY -->
+  <main id="library">
+
+    <!-- 1. The Collection -->
+    <section class="shelf-section" data-shelf="main">
+      <div class="shelf-unit">
+        <div class="shelf-back-wall"></div>
+        <div class="books-row" id="shelf-main"></div>
+        <div class="shelf-plank" data-wood="walnut">
+          <div class="plank-top"></div>
+          <div class="plank-face">
+            <div class="engraved-label">The Collection</div>
+            <div class="brass-plate" id="count-main">0 volumes</div>
+          </div>
+          <div class="plank-bottom"></div>
+          <div class="bracket bracket-left"></div>
+          <div class="bracket bracket-right"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Recommended -->
+    <section class="shelf-section" data-shelf="recommended">
+      <div class="shelf-unit">
+        <div class="shelf-back-wall"></div>
+        <div class="books-row" id="shelf-recommended"></div>
+        <div class="shelf-plank" data-wood="light-walnut">
+          <div class="plank-top"></div>
+          <div class="plank-face">
+            <div class="engraved-label">Recommended</div>
+            <div class="brass-plate" id="count-recommended">0 volumes</div>
+          </div>
+          <div class="plank-bottom"></div>
+          <div class="bracket bracket-left"></div>
+          <div class="bracket bracket-right"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Recently Read (white wood) -->
+    <section class="shelf-section" data-shelf="recent">
+      <div class="shelf-unit">
+        <div class="shelf-back-wall"></div>
+        <div class="books-row" id="shelf-recent"></div>
+        <div class="shelf-plank" data-wood="whitewood">
+          <div class="plank-top"></div>
+          <div class="plank-face">
+            <div class="engraved-label dark-engrave">Recently Read</div>
+            <div class="brass-plate dark-plate" id="count-recent">0 volumes</div>
+          </div>
+          <div class="plank-bottom"></div>
+          <div class="bracket bracket-left"></div>
+          <div class="bracket bracket-right"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Favourites -->
+    <section class="shelf-section" data-shelf="favourites">
+      <div class="shelf-unit">
+        <div class="shelf-back-wall"></div>
+        <div class="books-row" id="shelf-favourites"></div>
+        <div class="shelf-plank" data-wood="mahogany">
+          <div class="plank-top"></div>
+          <div class="plank-face">
+            <div class="engraved-label">Favourites</div>
+            <div class="brass-plate" id="count-favourites">0 volumes</div>
+          </div>
+          <div class="plank-bottom"></div>
+          <div class="bracket bracket-left"></div>
+          <div class="bracket bracket-right"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BOOK CARD (frosted, slides up) -->
+  <div id="book-card-overlay">
+    <div id="book-card">
+      <button id="book-card-close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <div id="book-card-spine-color"></div>
+
+      <div id="book-card-inner">
+
+        <!-- Cover flip -->
+        <div id="cover-flip-wrap">
+          <div id="cover-flip" title="Click to flip">
+            <div class="cover-face cover-front">
+              <img id="cover-img-front" src="" alt=""/>
+              <div id="cover-ph-front">
+                <div class="cover-ph-color"></div>
+                <div class="cover-ph-lines">
+                  <div class="cover-ph-line long"></div>
+                  <div class="cover-ph-line short"></div>
+                </div>
+              </div>
+            </div>
+            <div class="cover-face cover-back-face">
+              <img id="cover-img-back" src="" alt=""/>
+              <div id="cover-ph-back">
+                <p class="back-label">Back Cover</p>
+              </div>
+            </div>
+          </div>
+          <p class="cover-hint">Tap to flip</p>
+        </div>
+
+        <!-- Book info -->
+        <div id="book-info">
+          <h2 id="card-title"></h2>
+          <p id="card-author"></p>
+          <div id="card-meta">
+            <span id="card-rating"></span>
+            <span id="card-genre"></span>
+          </div>
+          <div id="card-actions">
+
+            <button class="card-btn" id="btn-fav">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+              Favourite
+            </button>
+
+            <button class="card-btn" id="btn-read">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              Mark as Read
+            </button>
+
+            <button class="card-btn" id="btn-buy">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+              </svg>
+              Buy
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAKE READER -->
+  <div id="reader-overlay">
+    <div id="reader-page">
+      <button id="reader-close">Close</button>
+      <div class="reader-decorline"></div>
+      <h2 id="reader-title"></h2>
+      <div class="reader-decorline"></div>
+      <p id="reader-not-available">
+        This tome has not yet been transcribed into the digital realm.<br/><br/>
+        <em>Check back soon, dear reader.</em>
+      </p>
+      <div id="reader-page-controls">
+        <button class="page-btn" id="prev-page">Turn Page</button>
+        <span id="page-number">Page 1</span>
+        <button class="page-btn" id="next-page">Turn Page</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+ 
+  <!-- SCRIPTS -->
+  <script src="easter-eggs.js"></script>
+  <script src="app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

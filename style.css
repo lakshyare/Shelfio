@@ -930,3 +930,80 @@ body {
 
 /* ── SELECTION ───────────────────────────── */
 ::selection { background: rgba(200,134,10,0.25); color: var(--cream); }
+
+/* ── BOOKS CONTAINER ───────────────────────── */
+#books-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 40px;
+}
+
+.book-card {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.book-card:hover {
+  transform: translateY(-6px);
+}
+
+.front-cover {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+.book-info {
+  padding: 24px;
+}
+
+.book-info h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.author {
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.genre {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.rating {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.description {
+  color: #444;
+  line-height: 1.6;
+  margin-top: 14px;
+}
+
+.extra-covers {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.extra-covers img {
+  width: 70px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.book-info a {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #10b981;
+  font-weight: 700;
+}

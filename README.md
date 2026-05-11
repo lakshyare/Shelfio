@@ -75,7 +75,6 @@ Yes. The project can be modified, expanded, and customized freely.
 | Column Name |	Type |
 | :-------- | :------: |
 id | uuid
-created_at | timestamptz
 title | text
 author | text
 buy_link | text

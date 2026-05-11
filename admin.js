@@ -114,6 +114,35 @@ async function searchBook() {
 
 }
 
+// GET BOOK"S COLOR
+
+function getBookColor(book) {
+
+  const genre =
+    (book.genre || '')
+    .toLowerCase()
+
+  if (genre.includes('fantasy'))
+    return '#3A2F24'
+
+  if (genre.includes('sci'))
+    return '#1E3A5F'
+
+  if (genre.includes('romance'))
+    return '#6B2D5C'
+
+  if (genre.includes('horror'))
+    return '#1F1F1F'
+
+  if (genre.includes('history'))
+    return '#5A3E2B'
+
+  if (genre.includes('philosophy'))
+    return '#2F3E46'
+
+  return '#374151'
+}
+
 // DISPLAY BOOKS
 
 function displayBooks(books) {
@@ -199,10 +228,15 @@ async function addBook(book) {
 
         buy_link: `https://www.amazon.com/s?k=${encodeURIComponent(book.title)}`,
 
-        spine_width:
-          Math.floor(
-            Math.random() * 24
-          ) + 42
+        pages:
+          Number(
+            book.pageCount ||
+            book.pages ||
+            0
+          ),
+
+        spine_color:
+          getBookColor(book)
 
       }
     ])

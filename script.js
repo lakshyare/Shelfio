@@ -1,4 +1,4 @@
-const supabaseUrl = 'https://supabase.com/dashboard/project/kxepdnnzrinvyqaznpwu/settings/api-keys'
+const supabaseUrl = 'https://kxepdnnzrinvyqaznpwu/settings/api-keys'
 
 const supabaseKey = 'sb_publishable_FoyuG0mWOQuo0S_-VPcFHA_JzmIgTp7'
 

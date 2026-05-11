@@ -197,7 +197,12 @@ async function addBook(book) {
 
         spine_cover_url: '',
 
-        buy_link: `https://www.amazon.com/s?k=${encodeURIComponent(book.title)}`
+        buy_link: `https://www.amazon.com/s?k=${encodeURIComponent(book.title)}`,
+
+        spine_width:
+          Math.floor(
+            Math.random() * 24
+          ) + 42
 
       }
     ])

@@ -27,7 +27,13 @@ async function syncBooks() {
     data.map(book => ({
 
       id:
-        crypto.randomUUID(),
+        (
+          book.title +
+          '-' +
+          (book.author || '')
+        )
+        .toLowerCase()
+        .replace(/\s+/g, '-'),
 
       title:
         book.title || 'Unknown',
@@ -75,16 +81,17 @@ async function syncBooks() {
 function randomColor() {
 
   const colors = [
-
-    '#7f1d1d',
-    '#172554',
+    '#2d1b1b',
+    '#1e293b',
     '#3f3f46',
-    '#3b0764',
-    '#422006',
-    '#14532d',
-    '#1e293b'
-
-  ]
+    '#172554',
+    '#3b2f2f',
+    '#3c2415',
+    '#1f3b2d',
+    '#2b2d42',
+    '#3d2c29',
+    '#2e3440'
+]
 
   return colors[
     Math.floor(

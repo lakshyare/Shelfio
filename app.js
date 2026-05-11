@@ -52,12 +52,12 @@ function createBookEl(book) {
   el.dataset.title  = book.title.toLowerCase();
   el.dataset.author = book.author.toLowerCase();
 
-  const h = Math.round(seededBetween(book.id, 'h', 118, 168));
-  const w = Math.round(seededBetween(book.id, 'w', 28, 52));
+  const h = Math.round(seededBetween(book.id, 'h', 126, 196));
+  const w = Math.round(seededBetween(book.id, 'w', 24, 82));
 
   el.style.height     = h + 'px';
   el.style.width      = w + 'px';
-  el.style.background = buildSpine(book.color);
+  el.style.background = buildSpine(book.color, book.id);
   el.style.boxShadow  = `inset -3px 0 6px rgba(0,0,0,0.45),
                          inset 2px 0 4px rgba(255,255,255,0.05),
                          1px 0 8px rgba(0,0,0,0.6)`;
@@ -74,6 +74,17 @@ function createBookEl(book) {
   authorEl.textContent = book.author;
   el.appendChild(authorEl);
 
+  const publisher =
+    document.createElement('div')
+
+  publisher.classList.add(
+    'book-publisher'
+  )
+
+  publisher.textContent = 'SHELFIO'
+
+  el.appendChild(publisher)
+
   // Click handler
   el.addEventListener('click', () => {
     // Deselect others
@@ -87,19 +98,64 @@ function createBookEl(book) {
     }
   });
 
+  const tilt =
+    seededBetween(
+      book.id,
+      'tilt',
+      -1.2,
+      1.2
+    )
+
+  el.style.transform =
+    `rotate(${tilt}deg)`
+
   return el;
 }
 
 // ─── SPINE ─────────────────────────────────
-function buildSpine(hex) {
-  const light = lighten(hex, 22);
-  return `linear-gradient(90deg,
-    rgba(0,0,0,0.5) 0%,
-    ${hex} 10%,
-    ${light} 48%,
-    ${hex} 82%,
-    rgba(0,0,0,0.55) 100%
-  )`;
+function buildSpine(hex, id='') {
+
+  const light = lighten(hex, 10)
+  const dark  = lighten(hex, -18)
+
+  // deterministic texture shift
+  let seed = 0
+
+  for (let i = 0; i < id.length; i++) {
+    seed += id.charCodeAt(i)
+  }
+
+  const angle =
+    (seed % 8) - 4
+
+  const grain =
+    seed % 2 === 0
+      ? 'rgba(255,255,255,0.035)'
+      : 'rgba(0,0,0,0.05)'
+
+  return `
+
+    linear-gradient(
+      ${angle}deg,
+
+      ${dark} 0%,
+      ${hex} 18%,
+      ${light} 52%,
+      ${hex} 76%,
+      ${dark} 100%
+    ),
+
+    repeating-linear-gradient(
+      to bottom,
+
+      ${grain} 0px,
+      ${grain} 1px,
+
+      transparent 1px,
+      transparent 5px
+    )
+
+  `
 }
 
 function lighten(hex, amt) {
@@ -175,7 +231,7 @@ function openBookCard(book) {
   } else {
     frontImg.style.display = 'none';
     phFront.style.display  = 'flex';
-    phFront.querySelector('.cover-ph-color').style.background = buildSpine(book.color);
+    phFront.querySelector('.cover-ph-color').style.background = buildSpine(book.color, book.id);
   }
 
   if (book.backUrl) {

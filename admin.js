@@ -197,7 +197,7 @@ async function addBook(book) {
 
         spine_cover_url: '',
 
-        buy_link: ''
+        buy_link: `https://www.amazon.com/s?k=${encodeURIComponent(book.title)}`
 
       }
     ])
@@ -219,3 +219,13 @@ async function addBook(book) {
   )
 
 }
+
+document
+  .getElementById('search-input')
+  .addEventListener('keypress', function(e) {
+
+    if (e.key === 'Enter') {
+      searchBook()
+    }
+
+})

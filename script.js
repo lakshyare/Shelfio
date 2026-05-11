@@ -1,69 +1,97 @@
-const supabaseUrl = 'https://kxepdnnzrinvyqaznpwu.supabase.co'
+const supabaseUrl =
+  'https://kxepdnnzrinvyqaznpwu.supabase.co'
 
-const supabaseKey = 'sb_publishable_FoyuG0mWOQuo0S_-VPcFHA_JzmIgTp7'
+const supabaseKey =
+  'sb_publishable_FoyuG0mWOQuo0S_-VPcFHA_JzmIgTp7'
 
-const supabaseClient = supabase.createClient(
-  supabaseUrl,
-  supabaseKey
+const supabaseClient =
+  supabase.createClient(
+    supabaseUrl,
+    supabaseKey
 )
 
-async function getBooks() {
+async function syncBooks() {
 
-  const { data, error } = await supabaseClient
-    .from('books')
-    .select('*')
+  const { data, error } =
+    await supabaseClient
+      .from('books')
+      .select('*')
 
-  if (error) {
-    console.log(error)
-    return
-  }
+  console.log(data)
+  console.log(error)
 
-  const container = document.getElementById('books-container')
+  if (error) return
 
-  container.innerHTML = ''
+  // TRANSFORM SUPABASE DATA
+  const transformed =
+    data.map(book => ({
 
-  data.forEach(book => {
+      id:
+        crypto.randomUUID(),
 
-    const card = document.createElement('div')
+      title:
+        book.title || 'Unknown',
 
-    card.classList.add('book-card')
+      author:
+        book.author || 'Unknown',
 
-    card.innerHTML = `
-      <img class="front-cover" src="${book.front_cover_url}" alt="${book.title}">
+      color:
+        randomColor(),
 
-      <div class="book-info">
+      shelf:
+        'main',
 
-        <h2>${book.title}</h2>
+      rating:
+        book.rating || 0,
 
-        <p class="author">${book.author}</p>
+      genre:
+        book.genre || '',
 
-        <p class="genre">${book.genre}</p>
+      buyLink:
+        book.buy_link || '',
 
-        <p class="rating">⭐ ${book.rating}</p>
+      coverUrl:
+        book.front_cover_url || '',
 
-        <p class="description">
-          ${book.description}
-        </p>
+      backUrl:
+        book.back_cover_url || ''
 
-        <div class="extra-covers">
+    }))
 
-          <img src="${book.back_cover_url}" alt="Back Cover">
+  // SAVE TO LOCAL STORAGE
+  localStorage.setItem(
+    'shelfio_books',
+    JSON.stringify([
+      ...DEFAULT_BOOKS,
+      ...transformed
+    ])
+  )
 
-          <img src="${book.spine_cover_url}" alt="Spine Cover">
-
-        </div>
-
-        <a href="${book.buy_link}" target="_blank">
-          Buy Book
-        </a>
-
-      </div>
-    `
-
-    container.appendChild(card)
-
-  })
+  // RENDER SHELVES
+  renderShelves()
 
 }
 
-getBooks()
+function randomColor() {
+
+  const colors = [
+
+    '#7f1d1d',
+    '#172554',
+    '#3f3f46',
+    '#3b0764',
+    '#422006',
+    '#14532d',
+    '#1e293b'
+
+  ]
+
+  return colors[
+    Math.floor(
+      Math.random() * colors.length
+    )
+  ]
+
+}
+
+syncBooks()

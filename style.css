@@ -1008,36 +1008,211 @@ body {
   font-weight: 700;
 }
 
-.admin-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 40px;
+.book-spine {
+
+  width: 58px;
+  height: 240px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.3s ease;
 }
 
-.admin-container input {
-  width: 300px;
-  padding: 14px;
-  border-radius: 12px;
-  border: 1px solid #ddd;
+.book-spine:hover {
+  transform:
+    translateY(-10px);
 }
 
-.admin-container button {
-  padding: 14px 20px;
-  border: none;
-  background: #10b981;
+.generated-spine {
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 6px 6px 0 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      #1f2937,
+      #111827
+    );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px;
+
+  position: relative;
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.35);
+
+  border-left:
+    2px solid rgba(255,255,255,0.08);
+
+  border-right:
+    2px solid rgba(0,0,0,0.25);
+}
+
+.spine-title {
+
+  writing-mode: vertical-rl;
+
+  transform: rotate(180deg);
+
   color: white;
-  border-radius: 12px;
-  cursor: pointer;
-  margin-left: 10px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  text-align: center;
+
+  line-height: 1.4;
 }
 
-#results {
-  margin-top: 40px;
+.spine-image {
 
-  display: grid;
+  width: 100%;
+  height: 100%;
 
-  grid-template-columns:
-    repeat(auto-fit, minmax(250px, 1fr));
+  object-fit: cover;
 
-  gap: 30px;
+  border-radius: 6px 6px 0 0;
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.35);
+}
+
+.book-spine {
+
+  height: 260px;
+
+  display: flex;
+  align-items: flex-end;
+
+  cursor: pointer;
+
+  transition: 0.28s ease;
+
+  position: relative;
+}
+
+.book-spine:hover {
+
+  transform:
+    translateY(-12px)
+    rotate(-1deg);
+
+  z-index: 20;
+}
+
+.generated-spine {
+
+  width: 100%;
+  height: 100%;
+
+  border-radius:
+    4px 4px 0 0;
+
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    18px 8px;
+
+  box-shadow:
+    inset 2px 0 rgba(255,255,255,0.08),
+    inset -3px 0 rgba(0,0,0,0.2),
+    0 12px 24px rgba(0,0,0,0.4);
+
+  border-left:
+    1px solid rgba(255,255,255,0.08);
+
+  border-right:
+    2px solid rgba(0,0,0,0.3);
+}
+
+.spine-lines {
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0.08;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      white 0px,
+      white 2px,
+      transparent 2px,
+      transparent 6px
+    );
+}
+
+.spine-title {
+
+  writing-mode: vertical-rl;
+
+  transform: rotate(180deg);
+
+  color: white;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+
+  text-align: center;
+
+  z-index: 2;
+
+  max-height: 85%;
+}
+
+.spine-author {
+
+  position: absolute;
+
+  bottom: 10px;
+
+  writing-mode: vertical-rl;
+
+  transform: rotate(180deg);
+
+  color:
+    rgba(255,255,255,0.55);
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+}
+
+.real-spine {
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius:
+    4px 4px 0 0;
+
+  box-shadow:
+    0 12px 24px rgba(0,0,0,0.4);
 }

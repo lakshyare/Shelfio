@@ -1007,3 +1007,37 @@ body {
   color: #10b981;
   font-weight: 700;
 }
+
+.admin-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px;
+}
+
+.admin-container input {
+  width: 300px;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+
+.admin-container button {
+  padding: 14px 20px;
+  border: none;
+  background: #10b981;
+  color: white;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+#results {
+  margin-top: 40px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(250px, 1fr));
+
+  gap: 30px;
+}

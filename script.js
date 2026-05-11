@@ -1,6 +1,6 @@
-const supabaseUrl = 'YOUR_SUPABASE_URL'
+const supabaseUrl = 'https://kxepdnnzrinvyqaznpwu.supabase.co'
 
-const supabaseKey = 'YOUR_PUBLISHABLE_KEY'
+const supabaseKey = 'sb_publishable_FoyuG0mWOQuo0S_-VPcFHA_JzmIgTp7'
 
 const supabaseClient = supabase.createClient(
   supabaseUrl,

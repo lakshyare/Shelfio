@@ -62,17 +62,141 @@ function createBookEl(book) {
                          inset 2px 0 4px rgba(255,255,255,0.05),
                          1px 0 8px rgba(0,0,0,0.6)`;
 
-  // Title (bottom to top)
-  const titleEl = document.createElement('div');
-  titleEl.classList.add('book-title');
-  titleEl.textContent = book.title;
-  el.appendChild(titleEl);
+  const lowerTitle =
+  (book.title || '')
+  .toLowerCase()
 
-  // Author (top to bottom, opposite side)
-  const authorEl = document.createElement('div');
-  authorEl.classList.add('book-author');
-  authorEl.textContent = book.author;
-  el.appendChild(authorEl);
+/* ───────── DEEP WORK ───────── */
+
+if (
+  lowerTitle.includes('deep work')
+) {
+
+  el.classList.add(
+    'spine-deep-work'
+  )
+
+  const titleEl =
+    document.createElement('div')
+
+  titleEl.classList.add(
+    'deepwork-title'
+  )
+
+  titleEl.textContent =
+    'DEEP WORK'
+
+  el.appendChild(titleEl)
+
+  const subtitle =
+    document.createElement('div')
+
+  subtitle.classList.add(
+    'deepwork-subtitle'
+  )
+
+  subtitle.textContent =
+    'Rules for Focused Success in a Distracted World'
+
+  el.appendChild(subtitle)
+
+  const authorEl =
+    document.createElement('div')
+
+  authorEl.classList.add(
+    'deepwork-author'
+  )
+
+  authorEl.textContent =
+    'CAL NEWPORT'
+
+  el.appendChild(authorEl)
+}
+
+/* ───────── WIMPY KID ───────── */
+
+else if (
+  lowerTitle.includes('wimpy kid')
+) {
+
+  el.classList.add(
+    'spine-wimpy'
+  )
+
+  const paper =
+    document.createElement('div')
+
+  paper.classList.add(
+    'wimpy-paper'
+  )
+
+  const titleEl =
+    document.createElement('div')
+
+  titleEl.classList.add(
+    'wimpy-title'
+  )
+
+  titleEl.textContent =
+    'Diary of a Wimpy Kid'
+
+  paper.appendChild(titleEl)
+
+  const subtitle =
+    document.createElement('div')
+
+  subtitle.classList.add(
+    'wimpy-subtitle'
+  )
+
+  subtitle.textContent =
+    'THE DEEP END'
+
+  paper.appendChild(subtitle)
+
+  const authorEl =
+    document.createElement('div')
+
+  authorEl.classList.add(
+    'wimpy-author'
+  )
+
+  authorEl.textContent =
+    'Jeff Kinney'
+
+  paper.appendChild(authorEl)
+
+  el.appendChild(paper)
+}
+
+/* ───────── DEFAULT ───────── */
+
+else {
+
+  const titleEl =
+    document.createElement('div')
+
+  titleEl.classList.add(
+    'book-title'
+  )
+
+  titleEl.textContent =
+    book.title
+
+  el.appendChild(titleEl)
+
+  const authorEl =
+    document.createElement('div')
+
+  authorEl.classList.add(
+    'book-author'
+  )
+
+  authorEl.textContent =
+    book.author
+
+  el.appendChild(authorEl)
+}
 
   const publisher =
     document.createElement('div')

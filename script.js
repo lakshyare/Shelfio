@@ -42,7 +42,8 @@ async function syncBooks() {
         book.author || 'Unknown',
 
       color:
-        randomColor(),
+  book.spine_color ||
+  randomColor(),
 
       shelf:
         'main',

@@ -371,15 +371,36 @@ body::before {
 
 /* ── BOOKS ROW ───────────────────────────── */
 .books-row {
-  position: relative;
-  z-index: 5;
-  min-height: 180px;
+
   display: flex;
+
   align-items: flex-end;
-  padding: 16px 20px 0;
-  gap: 3px;
-  flex-wrap: nowrap;
-  overflow: hidden;
+
+  gap: 0;
+
+  width: 100%;
+
+  position: relative;
+
+  justify-content: flex-start;
+
+  overflow-x: auto;
+
+  overflow-y: hidden;
+
+  scrollbar-width: none;
+
+  scroll-behavior: smooth;
+
+  -webkit-overflow-scrolling: touch;
+
+  padding:
+    0 24px 10px;
+}
+
+.books-row::-webkit-scrollbar {
+
+  display: none;
 }
 
 /* ── PLANK ───────────────────────────────── */
@@ -504,6 +525,7 @@ body::before {
 .book {
 
   position: relative;
+  flex-shrink: 0;
 
 transition:
   transform 220ms ease,
@@ -1397,180 +1419,4 @@ will-change:
 
   transition:
     opacity 220ms ease;
-}
-/* ───────────────────────────── */
-/* DEEP WORK */
-/* ───────────────────────────── */
-
-.spine-deep-work {
-
-  background:
-    linear-gradient(
-      to right,
-      #c89d16,
-      #f4d03f,
-      #c89d16
-    ) !important;
-}
-
-.deepwork-title {
-
-  position: absolute;
-
-  top: 12px;
-  left: 50%;
-
-  transform:
-    translateX(-50%)
-    rotate(180deg);
-
-  writing-mode: vertical-rl;
-
-  font-size: 1.2rem;
-
-  font-weight: 900;
-
-  color: #111;
-
-  letter-spacing: 2px;
-
-  height: 78%;
-
-  font-family:
-    'Inter',
-    sans-serif;
-}
-
-.deepwork-subtitle {
-
-  position: absolute;
-
-  bottom: 38px;
-  left: 50%;
-
-  transform:
-    translateX(-50%)
-    rotate(180deg);
-
-  writing-mode: vertical-rl;
-
-  font-size: 0.34rem;
-
-  line-height: 1.4;
-
-  color:
-    rgba(0,0,0,0.72);
-
-  text-align: center;
-}
-
-.deepwork-author {
-
-  position: absolute;
-
-  bottom: 10px;
-  left: 50%;
-
-  transform:
-    translateX(-50%)
-    rotate(180deg);
-
-  writing-mode: vertical-rl;
-
-  font-size: 0.42rem;
-
-  letter-spacing: 2px;
-
-  color:
-    rgba(0,0,0,0.8);
-}
-
-/* ───────────────────────────── */
-/* WIMPY KID */
-/* ───────────────────────────── */
-
-.spine-wimpy {
-
-  background:
-
-    repeating-linear-gradient(
-      to bottom,
-
-      #9bd6ff 0px,
-      #9bd6ff 18px,
-
-      #78c7ff 18px,
-      #78c7ff 36px
-    ) !important;
-}
-
-.wimpy-paper {
-
-  position: absolute;
-
-  top: 10px;
-  bottom: 10px;
-  left: 18%;
-
-  width: 64%;
-
-  background: white;
-
-  border-radius: 2px;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  justify-content: center;
-
-  padding: 5px;
-
-  box-shadow:
-    0 0 10px rgba(0,0,0,0.12);
-}
-
-.wimpy-title {
-
-  writing-mode: vertical-rl;
-
-  transform: rotate(180deg);
-
-  font-size: 0.85rem;
-
-  font-weight: 900;
-
-  color: #111;
-
-  line-height: 1;
-}
-
-.wimpy-subtitle {
-
-  writing-mode: vertical-rl;
-
-  transform: rotate(180deg);
-
-  font-size: 0.38rem;
-
-  color: #d62828;
-
-  font-weight: 800;
-
-  margin-top: 8px;
-}
-
-.wimpy-author {
-
-  writing-mode: vertical-rl;
-
-  transform: rotate(180deg);
-
-  font-size: 0.38rem;
-
-  color: #333;
-
-  margin-top: 10px;
 }

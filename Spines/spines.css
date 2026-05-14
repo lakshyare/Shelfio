@@ -1,0 +1,1696 @@
+/* ───────────────────────────── */
+/* DEEP WORK */
+/* ───────────────────────────── */
+
+.spine-deep-work {
+
+  background:
+    linear-gradient(
+      to right,
+
+      #d4af19 0%,
+      #f6dc59 22%,
+      #f0d44a 50%,
+      #f6dc59 78%,
+      #c89d16 100%
+    ) !important;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+/* BIG TITLE */
+
+.deepwork-title {
+
+  position: absolute;
+
+  top: 10px;
+  left: 50%;
+
+  transform:
+    translateX(-50%)
+    rotate(180deg);
+
+  writing-mode: vertical-rl;
+
+  font-family:
+    'Inter',
+    sans-serif;
+
+  font-size: 2rem;
+
+  font-weight: 900;
+
+  line-height: 0.82;
+
+  letter-spacing: -2px;
+
+  color: #111;
+
+  text-transform: uppercase;
+
+  height: 72%;
+}
+
+/* AUTHOR */
+
+.deepwork-author {
+
+  position: absolute;
+
+  bottom: 8px;
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+    bottom: 12px;
+
+  font-size: 0.3rem;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+
+  color:
+    rgba(0,0,0,0.84);
+
+  font-family:
+    'Inter',
+    sans-serif;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+/* ───────────────────────────── */
+/* Diary of a wimpy kid          */
+/* ───────────────────────────── */
+
+.spine-wimpy {
+
+  background:
+
+    repeating-linear-gradient(
+      to bottom,
+
+      #9bd6ff 0px,
+      #9bd6ff 18px,
+
+      #78c7ff 18px,
+      #78c7ff 36px
+    ) !important;
+}
+
+.wimpy-paper {
+
+  position: absolute;
+
+  top: 10px;
+  bottom: 10px;
+  left: 18%;
+
+  width: 64%;
+
+  background: white;
+
+  border-radius: 2px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 5px;
+
+  box-shadow:
+    0 0 10px rgba(0,0,0,0.12);
+}
+
+.wimpy-title {
+
+  writing-mode: vertical-rl;
+
+  transform: rotate(180deg);
+
+  font-size: 0.85rem;
+
+  font-weight: 900;
+
+  color: #111;
+
+  line-height: 1;
+}
+
+.wimpy-subtitle {
+
+  writing-mode: vertical-rl;
+
+  transform: rotate(180deg);
+
+  font-size: 0.38rem;
+
+  color: #d62828;
+
+  font-weight: 800;
+
+  margin-top: 8px;
+}
+
+.wimpy-author {
+
+  writing-mode: vertical-rl;
+
+  transform: rotate(180deg);
+
+  font-size: 0.38rem;
+
+  color: #333;
+
+  margin-top: 10px;
+}
+
+/* ───────── ATOMIC HABITS ───────── */
+
+.spine-atomic {
+
+  background:
+    linear-gradient(
+      to right,
+      #f5f1e8,
+      #ffffff,
+      #efe5c8
+    ) !important;
+}
+
+.atomic-title {
+
+  position: absolute;
+
+  top: 6px;
+  left: 50%;
+
+  transform:
+    translateX(-50%)
+    rotate(180deg);
+
+  writing-mode: vertical-rl;
+
+  white-space: nowrap;
+
+  font-size: 0.80rem;
+
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+
+  color: #c7a125;
+
+  font-family:
+    'Inter',
+    sans-serif;
+}
+
+.atomic-author {
+
+  position: absolute;
+
+  bottom: 6px;
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  font-size: 0.23rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.09px;
+
+  color: #111;
+
+  white-space: nowrap;
+
+  text-transform: uppercase;
+}
+
+/* ───────── 1984 ───────── */
+
+.spine-1984 {
+
+  background:
+    linear-gradient(
+      to bottom,
+      #08131d 9%,
+      #08131d 91%,
+      #8b0000 91%,
+      #8b0000 100%
+    ) !important;
+
+  overflow: hidden;
+}
+
+.n1984-title {
+
+  position: absolute;
+
+  top: 14px;
+  left: 50%;
+
+  transform:
+    translateX(-50%)
+    rotate(180deg);
+
+  writing-mode: vertical-rl;
+
+  font-size: 3.5rem;
+
+  font-weight: 900;
+
+  color: white;
+
+  letter-spacing: -3px;
+
+  font-family:
+    'Cormorant Garamond',
+    serif;
+
+  text-shadow:
+    0 2px 6px rgba(0,0,0,0.5);
+}
+
+.n1984-author {
+
+  position: absolute;
+
+  bottom: 7.5px;
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  font-size: 0.4rem;
+
+  font-style: italic;
+
+  letter-spacing: 0.01px;
+
+  color:
+    rgba(255,255,255,0.82);
+
+  white-space: nowrap;
+
+  font-family:
+    'Cormorant Garamond',
+    serif;
+}
+
+/* ───────── DUNE ───────── */
+
+.spine-dune {
+
+  background:
+    linear-gradient(
+      to right,
+      #d9d9d4,
+      #f2f2ed,
+      #cfcfc8
+    ) !important;
+
+  overflow: hidden;
+}
+
+.dune-title {
+
+  position: absolute;
+
+  top: 27.5px;
+  left: 50%;
+
+  transform:
+    translateX(-50%)
+    rotate(180deg);
+
+  writing-mode: vertical-rl;
+
+  font-size: 1.8rem;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+
+  color: #1b1b1b;
+
+  font-family:
+    'Inter',
+    sans-serif;
+}
+
+.dune-author {
+
+  position: absolute;
+
+  bottom: 7px;
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  font-size: 0.35rem;
+
+  font-weight: 900;
+
+  line-height: 1.1;
+
+  text-align: center;
+
+  letter-spacing: 0.001px;
+
+  color: #29a8df;
+
+  white-space: nowrap;
+
+  text-transform: uppercase;
+}
+
+/* ───────── HARRY POTTER ───────── */
+
+.spine-hp {
+
+  background:
+    linear-gradient(
+      to right,
+
+      #050505 0%,
+      #2a1247 20%,
+      #5b21b6 50%,
+      #2a1247 80%,
+      #050505 100%
+    ) !important;
+
+  overflow: hidden;
+
+  position: relative;
+}
+
+.hp-title {
+
+  position: absolute;
+
+  top: 4px;
+  left: 50%;
+
+  transform:
+    translateX(-50%)
+    rotate(180deg);
+
+  writing-mode: vertical-rl;
+
+  font-size: 0.7rem;
+
+  font-weight: 800;
+
+  color: #facc15;
+
+  letter-spacing: 1px;
+
+  white-space: nowrap;
+
+  font-family:
+    'Cormorant Garamond',
+    serif;
+
+  text-shadow:
+    0 2px 10px rgba(0,0,0,0.45);
+}
+
+.hp-author {
+
+  position: absolute;
+
+  bottom: 28px;
+
+  right: 4px;
+
+  writing-mode: vertical-rl;
+
+  transform: rotate(180deg);
+
+  font-size: 0.36rem;
+
+  font-weight: 600;
+
+  line-height: 1.05;
+
+  text-align: center;
+
+  color:
+    rgba(255,255,255,0.82);
+
+  font-family:
+    'Inter',
+    sans-serif;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+.hp-collection {
+
+  position: absolute;
+
+  bottom: 6.5px;
+
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  font-size: 0.28rem;
+
+  line-height: 1.15;
+
+  text-align: center;
+
+  color:
+    rgba(255,255,255,0.72);
+
+  letter-spacing: 1px;
+
+  font-family:
+    'Inter',
+    sans-serif;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  padding:
+    2px 4px;
+
+  border-top:
+    1px solid rgba(255,255,255,0.18);
+
+  border-bottom:
+    1px solid rgba(255,255,255,0.18);
+
+  background:
+    rgba(255,255,255,0.04);
+
+  backdrop-filter:
+    blur(2px);
+}
+
+/* ───────── SAPIENS ───────── */
+
+.spine-sapiens {
+
+  background:
+    linear-gradient(
+      to right,
+      #efe6d3,
+      #f8f2e7,
+      #ddd1b8
+    ) !important;
+}
+
+.sapiens-title {
+
+  position: absolute;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(180deg);
+
+  writing-mode: vertical-rl;
+
+  font-size: 1.25rem;
+
+  font-weight: 900;
+
+  color: #8b0000;
+
+  letter-spacing: 1px;
+
+  font-family:
+    'Inter',
+    sans-serif;
+}
+
+.sapiens-subtitle {
+
+  position: absolute;
+
+  bottom: 12px;
+
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  font-size: 0.28rem;
+
+  line-height: 1.15;
+
+  text-align: center;
+
+  color: #555;
+
+  font-family:
+    'Cormorant Garamond',
+    serif;
+
+  letter-spacing: 0.8px;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+.sapiens-author {
+
+  position: absolute;
+
+  top: 12px;
+
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  font-size: 0.34rem;
+
+  font-weight: 700;
+
+  line-height: 1.1;
+
+  text-align: center;
+
+  color: #444;
+
+  white-space: nowrap;
+
+  font-family:
+    'Inter',
+    sans-serif;
+
+  letter-spacing: 0.8px;
+
+  text-transform: uppercase;
+}
+
+/* ───────────────────────────── */
+/* THE HOBBIT */
+/* ───────────────────────────── */
+
+.spine-hobbit {
+
+  background:
+    linear-gradient(
+      to right,
+      #1f3d1f,
+      #355e3b,
+      #102010
+    ) !important;
+}
+
+.hobbit-title {
+
+  position: absolute;
+
+  top: 12px;
+  left: 50%;
+
+  transform:
+    translateX(-50%)
+    rotate(180deg);
+
+  writing-mode: vertical-rl;
+
+  font-size: 1.08rem;
+
+  font-weight: 700;
+
+  color: #d4af37;
+
+  letter-spacing: 1px;
+
+  font-family:
+    'Cormorant Garamond',
+    serif;
+
+  white-space: nowrap;
+}
+
+.hobbit-the {
+
+  position: absolute;
+
+  top: 14px;
+
+  left: 70%;
+
+  transform:
+    translateX(-50%);
+
+  font-size: 0.275rem;
+
+  letter-spacing: 0px;
+
+  font-weight: 700;
+
+  color: #d4af37;
+}
+
+.hobbit-author {
+
+  position: absolute;
+
+  bottom: 7.5px;
+
+  right: 9.5px;
+
+  writing-mode: vertical-rl;
+
+  transform: rotate(270deg);
+
+  font-size: 0.42rem;
+
+  line-height: 1.05;
+
+  color:
+    rgba(255,255,255,0.76);
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.0001px;
+
+  font-family:
+    'Inter',
+    sans-serif;
+}
+/* ───────────────────────────── */
+/* THE ALCHEMIST */
+/* ───────────────────────────── */
+
+.spine-alchemist {
+
+  background:
+    #f23b0c !important;
+}
+
+.alchemist-title {
+
+  position: absolute;
+
+  top: 4px;
+  left: 50%;
+
+  transform:
+    translateX(-50%)
+    rotate(180deg);
+
+  writing-mode: vertical-rl;
+
+  font-size: 0.8rem;
+
+  color: #ffffff;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  font-family:
+    'Cormorant Garamond',
+    serif;
+}
+
+.alchemist-author {
+
+  position: absolute;
+
+  bottom: 35px;
+
+  right: 10px;
+
+  writing-mode: vertical-rl;
+
+  transform: rotate(180deg);
+
+  font-size: 0.34rem;
+
+  line-height: 1.05;
+
+  color:
+    rgba(255, 255, 255, 0.78);
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+/* ───────────────────────────── */
+/* PSYCHOLOGY OF MONEY */
+/* ───────────────────────────── */
+
+.spine-money {
+
+  background:
+    white !important;
+}
+
+.money-title {
+
+  position: absolute;
+
+  top: 10px;
+  left: 50%;
+
+  transform:
+    translateX(-50%)
+    rotate(180deg);
+
+  writing-mode: vertical-rl;
+
+  white-space: nowrap;
+
+  font-size: 0.6rem;
+
+  font-weight: 900;
+
+  color: #111;
+
+  letter-spacing: 0.00001px;
+
+  font-family:
+    'Inter',
+    sans-serif;
+}
+
+.money-author {
+
+  position: absolute;
+
+  bottom: 10px;
+
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  font-size: 0.34rem;
+
+  font-weight: 700;
+
+  color: #222;
+
+  letter-spacing: 1px;
+
+  white-space: nowrap;
+
+  text-transform: uppercase;
+
+  font-family:
+    'Inter',
+    sans-serif;
+}
+/* ───────────────────────────── */
+/* PERCY JACKSON */
+/* ───────────────────────────── */
+
+.spine-percy {
+
+  background:
+    linear-gradient(
+      to right,
+
+      #ff6a00 0%,
+      #111111 50%,
+      #ff6a00 100%
+    ) !important;
+}
+
+.percy-title {
+
+  position: absolute;
+
+  top: 14px;
+  left: 50%;
+
+  transform:
+    translateX(-50%)
+    rotate(180deg);
+
+  writing-mode: vertical-rl;
+
+  font-size: 0.88rem;
+
+  font-weight: 900;
+
+  color: white;
+
+  line-height: 0.9;
+
+  letter-spacing: 1px;
+
+  text-align: center;
+}
+
+.percy-author {
+
+  position: absolute;
+
+  bottom: 12px;
+
+  right: 4px;
+
+  writing-mode: vertical-rl;
+
+  transform: rotate(180deg);
+
+  font-size: 0.44rem;
+
+  font-weight: 700;
+
+  color:
+    rgba(255,255,255,0.82);
+
+  line-height: 1.05;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+.percy-greek {
+
+  position: absolute;
+
+  bottom: 36px;
+
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  font-size: 0.24rem;
+
+  color:
+    rgba(255,255,255,0.72);
+
+  letter-spacing: 1px;
+
+  white-space: nowrap;
+
+  text-transform: uppercase;
+}
+
+/* ───────────────────────────── */
+/* STEVE JOBS */
+/* ───────────────────────────── */
+
+.spine-jobs {
+
+  background:
+    white !important;
+}
+
+.jobs-title {
+
+  position: absolute;
+
+  top: 50%;
+  left: 40%;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(180deg);
+
+  writing-mode: vertical-rl;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  color: #111;
+
+  letter-spacing: 1px;
+
+  white-space: nowrap;
+}
+
+.jobs-author {
+
+  position: absolute;
+
+  bottom: 60px;
+
+  right: 4px;
+
+  writing-mode: vertical-rl;
+
+  transform: rotate(180deg);
+
+  font-size: 0.3rem;
+
+  color: #444;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  font-family:
+    'Inter',
+    sans-serif;
+
+  white-space: nowrap;
+}
+
+/* ───────────────────────────── */
+/* GENERIC TITLE */
+/* ───────────────────────────── */
+
+.generic-title {
+
+  position: absolute;
+
+  top: 10px;
+
+  left: 50%;
+
+  transform:
+    translateX(-50%)
+    rotate(180deg);
+
+  writing-mode: vertical-rl;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  z-index: 5;
+
+  max-height: 78%;
+
+  max-width: 88%;
+
+  white-space: normal;
+
+  word-break: break-word;
+
+  overflow-wrap: break-word;
+
+  text-align: center;
+
+  line-height: 0.92;
+}
+
+.generic-author {
+
+  position: absolute;
+
+  bottom: 10px;
+
+  right: 4px;
+
+  writing-mode: vertical-rl;
+
+  transform: rotate(180deg);
+
+  font-size: 0.3rem;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  z-index: 5;
+}
+
+/* ───────────────────────────── */
+/* CLASSIC */
+/* ───────────────────────────── */
+
+.generic-classic.variant-1 {
+
+  background:
+    linear-gradient(
+      to right,
+      #e7dcc7,
+      #f6f0e3,
+      #d6c5a8
+    ) !important;
+}
+
+.generic-classic.variant-2 {
+
+  background:
+    linear-gradient(
+      to right,
+      #c8b79d,
+      #e4d7c3,
+      #b59f81
+    ) !important;
+}
+
+.generic-classic.variant-3 {
+
+  background:
+    linear-gradient(
+      to right,
+      #7b1e1e,
+      #a32d2d,
+      #4d1010
+    ) !important;
+}
+
+.generic-classic.variant-4 {
+
+  background:
+    linear-gradient(
+      to right,
+      #1f2d1f,
+      #344834,
+      #121b12
+    ) !important;
+}
+
+.generic-classic.variant-5 {
+
+  background:
+    linear-gradient(
+      to right,
+      #2a1d3d,
+      #4a2c63,
+      #170d24
+    ) !important;
+}
+
+/* CLASSIC TEXT */
+
+.generic-classic.variant-1 .generic-title {
+
+  color: #5c3b1e;
+}
+
+.generic-classic.variant-2 .generic-title {
+
+  color: #6b4423;
+}
+
+.generic-classic.variant-3 .generic-title {
+
+  color: #ffe7c2;
+}
+
+.generic-classic.variant-4 .generic-title {
+
+  color: #d6c7a1;
+}
+
+.generic-classic.variant-5 .generic-title {
+
+  color: #f5d0fe;
+}
+
+.generic-classic .generic-title {
+
+  font-family:
+    'Cormorant Garamond',
+    serif;
+}
+
+.generic-classic.variant-1 .generic-author,
+.generic-classic.variant-2 .generic-author {
+
+  color: #6b4b2a;
+}
+
+.generic-classic.variant-3 .generic-author,
+.generic-classic.variant-4 .generic-author,
+.generic-classic.variant-5 .generic-author {
+
+  color:
+    rgba(255,255,255,0.72);
+}
+
+/* ───────────────────────────── */
+/* THRILLER */
+/* ───────────────────────────── */
+
+.generic-thriller.variant-1 {
+
+  background:
+    linear-gradient(
+      to right,
+      #050505,
+      #202020,
+      #000000
+    ) !important;
+}
+
+.generic-thriller.variant-2 {
+
+  background:
+    linear-gradient(
+      to right,
+      #2b0000,
+      #5a0000,
+      #120000
+    ) !important;
+}
+
+.generic-thriller.variant-3 {
+
+  background:
+    linear-gradient(
+      to right,
+      #0b1c2c,
+      #18344d,
+      #07111b
+    ) !important;
+}
+
+.generic-thriller.variant-4 {
+
+  background:
+    linear-gradient(
+      to right,
+      #331400,
+      #5a2400,
+      #1a0a00
+    ) !important;
+}
+
+.generic-thriller.variant-5 {
+
+  background:
+    linear-gradient(
+      to right,
+      #111,
+      #3a3a3a,
+      #050505
+    ) !important;
+}
+
+/* THRILLER TEXT */
+
+.generic-thriller.variant-1 .generic-title {
+
+  color: #ffffff;
+}
+
+.generic-thriller.variant-2 .generic-title {
+
+  color: #ffb4b4;
+}
+
+.generic-thriller.variant-3 .generic-title {
+
+  color: #bfdbfe;
+}
+
+.generic-thriller.variant-4 .generic-title {
+
+  color: #fdba74;
+}
+
+.generic-thriller.variant-5 .generic-title {
+
+  color: #f3f4f6;
+}
+
+.generic-thriller .generic-title {
+
+  font-family:
+    'Inter',
+    sans-serif;
+}
+
+.generic-thriller .generic-author {
+
+  color:
+    rgba(255,255,255,0.68);
+}
+
+/* ───────────────────────────── */
+/* FANTASY */
+/* ───────────────────────────── */
+
+.generic-fantasy.variant-1 {
+
+  background:
+    linear-gradient(
+      to right,
+      #102010,
+      #244224,
+      #081408
+    ) !important;
+}
+
+.generic-fantasy.variant-2 {
+
+  background:
+    linear-gradient(
+      to right,
+      #1b1b3a,
+      #2d2d5c,
+      #101020
+    ) !important;
+}
+
+.generic-fantasy.variant-3 {
+
+  background:
+    linear-gradient(
+      to right,
+      #3b1028,
+      #5a1d3d,
+      #240816
+    ) !important;
+}
+
+.generic-fantasy.variant-4 {
+
+  background:
+    linear-gradient(
+      to right,
+      #3b2a18,
+      #6a4a2c,
+      #24160c
+    ) !important;
+}
+
+.generic-fantasy.variant-5 {
+
+  background:
+    linear-gradient(
+      to right,
+      #111,
+      #2d2d2d,
+      #000
+    ) !important;
+}
+
+/* FANTASY TEXT */
+
+.generic-fantasy.variant-1 .generic-title,
+.generic-fantasy.variant-4 .generic-title {
+
+  color: #d4af37;
+}
+
+.generic-fantasy.variant-2 .generic-title {
+
+  color: #c7d2fe;
+}
+
+.generic-fantasy.variant-3 .generic-title {
+
+  color: #f5d0fe;
+}
+
+.generic-fantasy.variant-5 .generic-title {
+
+  color: #f3f4f6;
+}
+
+.generic-fantasy .generic-title {
+
+  font-family:
+    'Cormorant Garamond',
+    serif;
+}
+
+.generic-fantasy .generic-author {
+
+  color:
+    rgba(255,255,255,0.72);
+}
+
+/* ───────────────────────────── */
+/* ACADEMIC */
+/* ───────────────────────────── */
+
+.generic-academic.variant-1 {
+
+  background:
+    linear-gradient(
+      to right,
+      #6d5c49,
+      #9f8b75,
+      #544636
+    ) !important;
+}
+
+.generic-academic.variant-2 {
+
+  background:
+    linear-gradient(
+      to right,
+      #3d4d5a,
+      #607080,
+      #24303a
+    ) !important;
+}
+
+.generic-academic.variant-3 {
+
+  background:
+    linear-gradient(
+      to right,
+      #4d3d2b,
+      #70563d,
+      #2c2117
+    ) !important;
+}
+
+.generic-academic.variant-4 {
+
+  background:
+    linear-gradient(
+      to right,
+      #2d3d2d,
+      #4a5c4a,
+      #182018
+    ) !important;
+}
+
+.generic-academic.variant-5 {
+
+  background:
+    linear-gradient(
+      to right,
+      #4a1f1f,
+      #6a2d2d,
+      #261010
+    ) !important;
+}
+
+/* ACADEMIC TEXT */
+
+.generic-academic.variant-1 .generic-title {
+
+  color: #f3eadb;
+}
+
+.generic-academic.variant-2 .generic-title {
+
+  color: #dbeafe;
+}
+
+.generic-academic.variant-3 .generic-title {
+
+  color: #fcd9b6;
+}
+
+.generic-academic.variant-4 .generic-title {
+
+  color: #d1fae5;
+}
+
+.generic-academic.variant-5 .generic-title {
+
+  color: #fecaca;
+}
+
+.generic-academic .generic-title {
+
+  font-family:
+    'Inter',
+    sans-serif;
+}
+
+.generic-academic .generic-author {
+
+  color:
+    rgba(255,255,255,0.72);
+}
+
+/* ───────────────────────────── */
+/* MINIMAL */
+/* ───────────────────────────── */
+
+.generic-minimal.variant-1 {
+
+  background:
+    linear-gradient(
+      to right,
+      #1f1f1f,
+      #343434,
+      #111111
+    ) !important;
+}
+
+.generic-minimal.variant-2 {
+
+  background:
+    linear-gradient(
+      to right,
+      #2d3748,
+      #4a5568,
+      #1a202c
+    ) !important;
+}
+
+.generic-minimal.variant-3 {
+
+  background:
+    linear-gradient(
+      to right,
+      #d6d3d1,
+      #f5f5f4,
+      #bfb8ae
+    ) !important;
+}
+
+.generic-minimal.variant-4 {
+
+  background:
+    linear-gradient(
+      to right,
+      #3f3f46,
+      #52525b,
+      #27272a
+    ) !important;
+}
+
+.generic-minimal.variant-5 {
+
+  background:
+    linear-gradient(
+      to right,
+      #4b5563,
+      #6b7280,
+      #374151
+    ) !important;
+}
+
+.generic-minimal.variant-1 .generic-title,
+.generic-minimal.variant-2 .generic-title,
+.generic-minimal.variant-4 .generic-title,
+.generic-minimal.variant-5 .generic-title {
+
+  color: white;
+
+  font-family:
+    'Inter',
+    sans-serif;
+}
+
+.generic-minimal.variant-3 .generic-title {
+
+  color: #111;
+
+  font-family:
+    'Inter',
+    sans-serif;
+}
+
+.generic-minimal.variant-1 .generic-author,
+.generic-minimal.variant-2 .generic-author,
+.generic-minimal.variant-4 .generic-author,
+.generic-minimal.variant-5 .generic-author {
+
+  color:
+    rgba(255,255,255,0.72);
+}
+
+.generic-minimal.variant-3 .generic-author {
+
+  color: #444;
+}
+
+/* ───────────────────────────── */
+/* COMPOSITION 1 */
+/* HERO TITLE */
+/* ───────────────────────────── */
+
+.composition-1 .generic-title {
+
+  top: 8px !important;
+
+  font-size: 1rem !important;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+}
+
+.composition-1 .generic-author {
+
+  bottom: 8px !important;
+
+  font-size: 0.26rem !important;
+
+  opacity: 0.72;
+}
+
+/* ───────────────────────────── */
+/* COMPOSITION 2 */
+/* SPLIT DIVIDER */
+/* ───────────────────────────── */
+
+.composition-2 .generic-title {
+
+  top: 12px !important;
+
+  font-size: 0.78rem !important;
+}
+
+.composition-2 .generic-author {
+
+  bottom: 14px !important;
+
+  font-size: 0.3rem !important;
+}
+
+.composition-2::after {
+
+  content: '';
+
+  position: absolute;
+
+  left: 50%;
+
+  top: 52%;
+
+  width: 2px;
+
+  height: 28px;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    rgba(255,255,255,0.25);
+
+  z-index: 3;
+}
+
+/* ───────────────────────────── */
+/* COMPOSITION 3 */
+/* BOTTOM HEAVY */
+/* ───────────────────────────── */
+
+.composition-3 .generic-title {
+
+  top: auto !important;
+
+  bottom: 10px !important;
+
+  font-size: 0.95rem !important;
+
+  font-weight: 800;
+}
+
+.composition-3 .generic-author {
+
+  top: 10px !important;
+
+  bottom: auto !important;
+
+  font-size: 0.24rem !important;
+
+  opacity: 0.65;
+}
+
+/* ───────────────────────────── */
+/* COMPOSITION 4 */
+/* EMBLEM STYLE */
+/* ───────────────────────────── */
+
+.composition-4 .generic-title {
+
+  top: 18px !important;
+
+  font-size: 0.82rem !important;
+}
+
+.composition-4 .generic-author {
+
+  bottom: 10px !important;
+
+  font-size: 0.28rem !important;
+}
+
+.composition-4::before {
+
+  content: '◆';
+
+  position: absolute;
+
+  top: 8px;
+
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  font-size: 0.42rem;
+
+  color:
+    rgba(255,255,255,0.55);
+
+  z-index: 5;
+}
+
+/* TITLE SIZE SYSTEM */
+
+.title-lg {
+
+  font-size: 0.92rem !important;
+}
+
+.title-md {
+
+  font-size: 0.72rem !important;
+}
+
+.title-sm {
+
+  font-size: 0.54rem !important;
+
+  line-height: 0.88;
+}
+
+.title-xs {
+
+  font-size: 0.40rem !important;
+
+  line-height: 0.82;
+
+  letter-spacing: 0px;
+}

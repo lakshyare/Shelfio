@@ -10,7 +10,7 @@ const DEFAULT_BOOKS = [
     id:       'forbidden',
     title:    'Forbidden Tome',
     author:   'Unknown',
-    color:    '#0a0808',
+    color:    '#000000',
     shelf:    'main',
     rating:   0,
     genre:    '???',
@@ -52,126 +52,50 @@ function createBookEl(book) {
   el.dataset.title  = book.title.toLowerCase();
   el.dataset.author = book.author.toLowerCase();
 
-  const h = Math.round(seededBetween(book.id, 'h', 126, 196));
-  const w = Math.round(seededBetween(book.id, 'w', 24, 82));
+  const h = Math.round(
+  seededBetween(
+    book.id,
+    'h',
+    150,
+    230
+  )
+);
+
+const w = Math.round(
+  seededBetween(
+    book.id,
+    'w',
+    42,
+    72
+  )
+);
 
   el.style.height     = h + 'px';
   el.style.width      = w + 'px';
   el.style.background = buildSpine(book.color, book.id);
+  if (
+  !el.classList.contains(
+    'spine-deep-work'
+  ) &&
+  !el.classList.contains(
+    'spine-wimpy'
+  )
+) {
+
+  el.style.background =
+    book.color
+}
   el.style.boxShadow  = `inset -3px 0 6px rgba(0,0,0,0.45),
                          inset 2px 0 4px rgba(255,255,255,0.05),
                          1px 0 8px rgba(0,0,0,0.6)`;
 
-  const lowerTitle =
-  (book.title || '')
-  .toLowerCase()
-
-/* ───────── DEEP WORK ───────── */
-
-if (
-  lowerTitle.includes('deep work')
-) {
-
-  el.classList.add(
-    'spine-deep-work'
+const usedSpecialSpine =
+  applySpecialSpine(
+    el,
+    book
   )
 
-  const titleEl =
-    document.createElement('div')
-
-  titleEl.classList.add(
-    'deepwork-title'
-  )
-
-  titleEl.textContent =
-    'DEEP WORK'
-
-  el.appendChild(titleEl)
-
-  const subtitle =
-    document.createElement('div')
-
-  subtitle.classList.add(
-    'deepwork-subtitle'
-  )
-
-  subtitle.textContent =
-    'Rules for Focused Success in a Distracted World'
-
-  el.appendChild(subtitle)
-
-  const authorEl =
-    document.createElement('div')
-
-  authorEl.classList.add(
-    'deepwork-author'
-  )
-
-  authorEl.textContent =
-    'CAL NEWPORT'
-
-  el.appendChild(authorEl)
-}
-
-/* ───────── WIMPY KID ───────── */
-
-else if (
-  lowerTitle.includes('wimpy kid')
-) {
-
-  el.classList.add(
-    'spine-wimpy'
-  )
-
-  const paper =
-    document.createElement('div')
-
-  paper.classList.add(
-    'wimpy-paper'
-  )
-
-  const titleEl =
-    document.createElement('div')
-
-  titleEl.classList.add(
-    'wimpy-title'
-  )
-
-  titleEl.textContent =
-    'Diary of a Wimpy Kid'
-
-  paper.appendChild(titleEl)
-
-  const subtitle =
-    document.createElement('div')
-
-  subtitle.classList.add(
-    'wimpy-subtitle'
-  )
-
-  subtitle.textContent =
-    'THE DEEP END'
-
-  paper.appendChild(subtitle)
-
-  const authorEl =
-    document.createElement('div')
-
-  authorEl.classList.add(
-    'wimpy-author'
-  )
-
-  authorEl.textContent =
-    'Jeff Kinney'
-
-  paper.appendChild(authorEl)
-
-  el.appendChild(paper)
-}
-
-/* ───────── DEFAULT ───────── */
-
-else {
+if (!usedSpecialSpine) {
 
   const titleEl =
     document.createElement('div')
@@ -197,17 +121,6 @@ else {
 
   el.appendChild(authorEl)
 }
-
-  const publisher =
-    document.createElement('div')
-
-  publisher.classList.add(
-    'book-publisher'
-  )
-
-  publisher.textContent = 'SHELFIO'
-
-  el.appendChild(publisher)
 
   // Click handler
   el.addEventListener('click', () => {
@@ -302,7 +215,78 @@ function renderShelves() {
     row.innerHTML = '';
 
     const shelfBooks = books.filter(b => b.shelf === shelfId);
-    shelfBooks.forEach(book => row.appendChild(createBookEl(book)));
+    const infiniteLoop =
+  shelfBooks.length > 12;
+
+const extendedBooks =
+  infiniteLoop
+
+    ? [
+        ...shelfBooks,
+        ...shelfBooks,
+        ...shelfBooks
+      ]
+
+    : shelfBooks;
+
+    extendedBooks.forEach(
+  book =>
+    row.appendChild(
+      createBookEl(book)
+    )
+);
+if (infiniteLoop) {
+
+  requestAnimationFrame(() => {
+
+    row.scrollLeft =
+      row.scrollWidth / 3;
+
+  });
+
+}
+
+if (infiniteLoop) {
+
+let scrollTimeout;
+
+row.addEventListener(
+  'scroll',
+  () => {
+
+    clearTimeout(
+      scrollTimeout
+    );
+
+    scrollTimeout =
+      setTimeout(() => {
+
+        const third =
+          row.scrollWidth / 3;
+
+        if (
+          row.scrollLeft <
+          third * 0.5
+        ) {
+
+          row.scrollLeft +=
+            third;
+        }
+
+        if (
+          row.scrollLeft >
+          third * 1.5
+        ) {
+
+          row.scrollLeft -=
+            third;
+        }
+
+      }, 120);
+
+  }
+);
+}
 
     if (shelfBooks.length === 0) {
       const empty = document.createElement('p');
